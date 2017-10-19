@@ -1,8 +1,8 @@
 package com.csjamesdu.dp.abstractFactory.factory.impl;
 
-import com.csjamesdu.dp.abstractFactory.car.impl.LuxuryCar;
 import com.csjamesdu.dp.abstractFactory.intfc.Car;
 import com.csjamesdu.dp.abstractFactory.intfc.CarFactory;
+import com.csjamesdu.dp.abstractFactory.car.impl.LuxuryCar;
 
 
 public class LuxuryCarFactory implements CarFactory{	
