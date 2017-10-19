@@ -1,4 +1,6 @@
-package com.csjamesdu.dp.strategy;
+package com.csjamesdu.dp.strategy.comparator;
+
+import com.csjamesdu.dp.strategy.comparator.model.Cat;
 
 public class CatWeightComparator implements java.util.Comparator<Cat> {
 

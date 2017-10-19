@@ -1,6 +1,9 @@
-package com.csjamesdu.dp.strategy;
+package com.csjamesdu.dp.strategy.comparator.model;
 
 import java.util.Comparator;
+
+import com.csjamesdu.dp.strategy.comparator.CatWeightComparator;
+
 import java.lang.Comparable;
 
 public class Cat implements Comparable<Cat>{

@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.strategy;
+package com.csjamesdu.dp.strategy.comparator.model;
 import java.lang.Comparable;
 
 public class Dog implements Comparable<Dog>{

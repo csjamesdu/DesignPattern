@@ -1,5 +1,7 @@
-package com.csjamesdu.dp.strategy;
+package com.csjamesdu.dp.strategy.comparator.util;
 import java.lang.Comparable;
+
+import com.csjamesdu.dp.strategy.comparator.model.Cat;
 
 public class DataSorter {
 	
