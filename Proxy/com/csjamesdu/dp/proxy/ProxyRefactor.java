@@ -24,16 +24,15 @@ public class ProxyRefactor {
 		Object proxy = null;
 		String srcStr = null;
 			
-		srcStr = FileGen(intfc);
-		WriteToFS(srcStr);
-		CompileFile(fileName);
-		
+		srcStr = codeGenerate(intfc);
+		writeToFS(srcStr);
+		compileFile(fileName);		
 		proxy = InstantiateProxy(h);
 		
 		return proxy;		
 	}
 	
-	public static String FileGen(Class<?> intfc){
+	public static String codeGenerate(Class<?> intfc){
 		String src = null;
 		String methodStr="";
 		String rt = "\r\n";
@@ -72,7 +71,7 @@ public class ProxyRefactor {
 		return src;
 	}
 
-	public static void WriteToFS(String preStr){
+	public static void writeToFS(String preStr){
 		File f = new File(fileName);
 		FileWriter fw;
 		try {
@@ -85,7 +84,7 @@ public class ProxyRefactor {
 		} 
 	}
 
-	public static void CompileFile(String FileName){
+	public static void compileFile(String FileName){
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 		//System.out.println(compiler.getClass().getName());
 		StandardJavaFileManager fileMgr = compiler.getStandardFileManager(null, null, null);
