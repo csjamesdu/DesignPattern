@@ -1,4 +1,8 @@
-package com.csjamesdu.dp.filterchain;
+package com.csjamesdu.dp.cor.model.filters;
+
+import com.csjamesdu.dp.cor.chain.FilterChain;
+import com.csjamesdu.dp.cor.model.Request;
+import com.csjamesdu.dp.cor.model.Response;
 
 public class FilterB implements Filter {
 

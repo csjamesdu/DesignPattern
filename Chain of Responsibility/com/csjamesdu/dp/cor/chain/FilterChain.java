@@ -1,6 +1,10 @@
-package com.csjamesdu.dp.filterchain;
+package com.csjamesdu.dp.cor.chain;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.csjamesdu.dp.cor.model.Request;
+import com.csjamesdu.dp.cor.model.Response;
+import com.csjamesdu.dp.cor.model.filters.Filter;
 
 public class FilterChain implements Filter{
 	List<Filter> filters = new ArrayList<Filter>();

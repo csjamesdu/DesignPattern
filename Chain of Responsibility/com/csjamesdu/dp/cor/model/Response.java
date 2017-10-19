@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.filterchain;
+package com.csjamesdu.dp.cor.model;
 
 public class Response {
 	String responseStr;
