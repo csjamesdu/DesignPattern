@@ -1,7 +1,5 @@
 package com.csjamesdu.dp.strategy.comparator.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import com.csjamesdu.dp.strategy.comparator.model.Cat;
