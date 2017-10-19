@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.proxy;
+package com.csjamesdu.dp.proxy.intfc;
 
 import java.lang.reflect.Method;
 

@@ -1,9 +1,8 @@
-package com.csjamesdu.dp.factory.car.impl;
+package com.csjamesdu.dp.abstractFactory.car.impl;
 
-import com.csjamesdu.dp.factory.intfc.Car;
+import com.csjamesdu.dp.abstractFactory.intfc.Car;
 
-public class LuxuryCar implements Car{
-	
+public class EconomyCar implements Car{
 	private String engine;
 	private String model;
 	private String brand;

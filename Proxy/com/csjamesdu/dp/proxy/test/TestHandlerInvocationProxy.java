@@ -1,11 +1,18 @@
-package com.csjamesdu.dp.proxy;
+package com.csjamesdu.dp.proxy.test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class TestHandlerInvocation{
+import com.csjamesdu.dp.proxy.Proxy;
+import com.csjamesdu.dp.proxy.handlers.LogHandler;
+import com.csjamesdu.dp.proxy.handlers.TimeHandler;
+import com.csjamesdu.dp.proxy.intfc.InvocationHandler;
+import com.csjamesdu.dp.proxy.intfc.Movable;
+import com.csjamesdu.dp.proxy.model.Car;
+
+public class TestHandlerInvocationProxy{
 	private Car c ;
 	private InvocationHandler h;
 	private Movable m;

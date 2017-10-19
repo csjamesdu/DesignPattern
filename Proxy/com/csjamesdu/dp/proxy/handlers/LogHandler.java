@@ -1,6 +1,8 @@
-package com.csjamesdu.dp.proxy;
+package com.csjamesdu.dp.proxy.handlers;
 
 import java.lang.reflect.Method;
+
+import com.csjamesdu.dp.proxy.intfc.InvocationHandler;
 
 public class LogHandler implements InvocationHandler {
 	

@@ -17,14 +17,27 @@ import javax.tools.JavaCompiler.CompilationTask;
 
 import com.csjamesdu.dp.proxy.intfc.InvocationHandler;
 
-public class Proxy {
-	public static Object newProxyInstance(Class<?> intfc, InvocationHandler h) { 
-		String methodStr = "";
-		String rt = "\r\n";
-		Object m = null;
-		URLClassLoader ul = null;
+public class ProxyRefactor {
+	static String fileName = "d:/tmp/src/com/csjamesdu/dp/proxy/$Proxy1.java";
+	
+	public static Object newProxyInstance(Class<?> intfc, InvocationHandler h){
+		Object proxy = null;
+		String srcStr = null;
+			
+		srcStr = FileGen(intfc);
+		WriteToFS(srcStr);
+		CompileFile(fileName);
 		
-		Method[] methods= intfc.getMethods();
+		proxy = InstantiateProxy(h);
+		
+		return proxy;		
+	}
+	
+	public static String FileGen(Class<?> intfc){
+		String src = null;
+		String methodStr="";
+		String rt = "\r\n";
+		Method [] methods = intfc.getMethods();
 		
 		for(Method meth : methods){
 			methodStr += "@Override" + rt + 
@@ -37,11 +50,12 @@ public class Proxy {
 						 "	}" +rt+
 						
 						 "}";
-		}
+		} 
 		
-		
-		String src="package com.csjamesdu.dp.proxy;"+ rt +
+		src="package com.csjamesdu.dp.proxy;"+ rt +
 				"import java.lang.reflect.Method;" +rt+
+				
+				"import com.csjamesdu.dp.proxy.intfc.InvocationHandler;" + rt +
 	
 				"public class $Proxy1 implements "+intfc.getName()+"{"+ rt +
 				
@@ -53,24 +67,27 @@ public class Proxy {
 				"	}"+ rt +
 				
 				methodStr+ rt +
-			"}";
+		"}";
 		
-		//write the generated proxy java file into the file system
-		String fileName = "d:/tmp/src/com/csjamesdu/dp/proxy/$Proxy1.java";
+		return src;
+	}
+
+	public static void WriteToFS(String preStr){
 		File f = new File(fileName);
 		FileWriter fw;
 		try {
 			fw = new FileWriter(f);
-			fw.write(src);
+			fw.write(preStr);
 			fw.flush();
 			fw.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
-		
-		//compile the java file into the class file
+	}
+
+	public static void CompileFile(String FileName){
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-//System.out.println(compiler.getClass().getName());
+		//System.out.println(compiler.getClass().getName());
 		StandardJavaFileManager fileMgr = compiler.getStandardFileManager(null, null, null);
 		Iterable units = fileMgr.getJavaFileObjects(fileName);
 		CompilationTask t = compiler.getTask(null, fileMgr, null, null, null, units);
@@ -81,15 +98,18 @@ public class Proxy {
 			e.printStackTrace();
 		}
 		
-		
-		//Load class file into memory and create instance
+	}
+
+	public static Object InstantiateProxy(InvocationHandler h){
+		Object instanceProxy = null;
+		URLClassLoader ul = null;
 		URL[] urls;
 		try {
 			urls = new URL[]{new URL("file:/"+"d:/tmp/src/")};
 			ul = new URLClassLoader(urls);
 			Class c = ul.loadClass("com.csjamesdu.dp.proxy.$Proxy1");
 			Constructor ctr = c.getConstructor(InvocationHandler.class);
-			m = ctr.newInstance(h);			
+			instanceProxy = ctr.newInstance(h);			
 		} catch (MalformedURLException | NoSuchMethodException | SecurityException | 
 				ClassNotFoundException | InstantiationException | IllegalAccessException | 
 				IllegalArgumentException | InvocationTargetException e) {
@@ -101,28 +121,6 @@ public class Proxy {
 				e.printStackTrace();
 			}
 		}
-		
-		return m;
+		return instanceProxy;
 	}
 }
-
-
-/*Dynamically generated Proxy File 
-package com.csjamesdu.dp.proxy;
-import java.lang.reflect.Method;
-public class $Proxy1 implements com.csjamesdu.dp.proxy.Movable{
-	com.csjamesdu.dp.proxy.InvocationHandler h;
-	public $Proxy1(InvocationHandler h) {
-		super();
-		this.h = h;
-	}
-	@Override
-	public void move() {
-		try{
-			Method md = com.csjamesdu.dp.proxy.Movable.class.getMethod("move");
-			h.invoke(this, md);
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-}*/

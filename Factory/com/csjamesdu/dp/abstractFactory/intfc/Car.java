@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.factory.intfc;
+package com.csjamesdu.dp.abstractFactory.intfc;
 
 public interface Car {
 	String getEngine();

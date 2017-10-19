@@ -1,8 +1,8 @@
-package com.csjamesdu.dp.factory.factory.impl;
+package com.csjamesdu.dp.abstractFactory.factory.impl;
 
-import com.csjamesdu.dp.factory.car.impl.EconomyCar;
-import com.csjamesdu.dp.factory.intfc.Car;
-import com.csjamesdu.dp.factory.intfc.CarFactory;
+import com.csjamesdu.dp.abstractFactory.car.impl.EconomyCar;
+import com.csjamesdu.dp.abstractFactory.intfc.Car;
+import com.csjamesdu.dp.abstractFactory.intfc.CarFactory;
 
 public class EconomyCarFactory implements CarFactory{
 

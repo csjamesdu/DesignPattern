@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.factory.test;
+package com.csjamesdu.dp.abstractFactory.test;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -6,9 +6,8 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.csjamesdu.dp.factory.factory.impl.CarFactoryPortal;
-import com.csjamesdu.dp.factory.intfc.*;
-import com.csjamesdu.dp.factory.factory.impl.*;
+import com.csjamesdu.dp.abstractFactory.factory.impl.*;
+import com.csjamesdu.dp.abstractFactory.intfc.*;
 
 public class TestCarFactory {
 

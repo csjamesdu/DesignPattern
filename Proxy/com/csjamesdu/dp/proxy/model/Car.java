@@ -1,5 +1,7 @@
-package com.csjamesdu.dp.proxy;
+package com.csjamesdu.dp.proxy.model;
 import java.util.Random;
+
+import com.csjamesdu.dp.proxy.intfc.Movable;
 
 public class Car implements Movable{
 
