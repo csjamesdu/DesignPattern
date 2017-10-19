@@ -1,4 +1,4 @@
-package com.csjamesdu.dp.cor.model.filters;
+package com.csjamesdu.dp.cor.filters;
 
 import com.csjamesdu.dp.cor.chain.FilterChain;
 import com.csjamesdu.dp.cor.model.Request;

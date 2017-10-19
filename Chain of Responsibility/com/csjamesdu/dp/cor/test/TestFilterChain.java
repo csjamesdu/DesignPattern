@@ -3,11 +3,11 @@ package com.csjamesdu.dp.cor.test;
 import org.junit.Test;
 
 import com.csjamesdu.dp.cor.chain.FilterChain;
+import com.csjamesdu.dp.cor.filters.FilterA;
+import com.csjamesdu.dp.cor.filters.FilterB;
+import com.csjamesdu.dp.cor.filters.FilterC;
 import com.csjamesdu.dp.cor.model.Request;
 import com.csjamesdu.dp.cor.model.Response;
-import com.csjamesdu.dp.cor.model.filters.FilterA;
-import com.csjamesdu.dp.cor.model.filters.FilterB;
-import com.csjamesdu.dp.cor.model.filters.FilterC;
 
 public class TestFilterChain {
 
